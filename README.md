@@ -60,7 +60,7 @@ uv venv echowhisper
 #### 4. Install the requirements:
 
 ```bash
-uv pip install -r EchoWhisperAPI\requirements.txt
+uv pip install -r requirements.txt
 ```
 
 #### 5. (Optional) Install Python Magic Package:
@@ -81,7 +81,7 @@ uv pip install python-magic python-magic-bin --force-reinstall
 #### 1. Install the Anaconda Environment:
 
 ```bash
-conda env create -n echowhisper -f EchoWhisperAPI\_conda\EchoWhisper_conda.yml 
+conda env create -n echowhisper -f _conda\EchoWhisper_conda.yml 
 ```
 
 #### 2. Activate the environment (Using Anaconda Terminal):
@@ -97,13 +97,13 @@ conda activate echowhisper
 - Run the FastAPI server:
 
 ```bash
-python .\EchoWhisperAPI\EchoWhisper_Main_v1.py
+python .\EchoWhisper_Main_v1.py
 ```
 
 - You can set logging level with the following command:
 
 ```bash
-python .\EchoWhisperAPI\EchoWhisper_Main_v1.py --log-level DEBUG
+python .\EchoWhisper_Main_v1.py --log-level DEBUG
 ```
 
 ## Usage:
