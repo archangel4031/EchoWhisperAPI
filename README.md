@@ -128,7 +128,11 @@ curl -X POST "http://127.0.0.1:8081/chat" -H "Content-Type: application/json" -d
 
 ### Unreal Engine Integration:
 
-A sample template along with API for Unreal Engine 5.5.1 is provided in the [Echo Whisper Template on MEGA](https://mega.nz/folder/D5IEhaZT#PIEDeyTS19-9I8YHkDKAZA).
+A sample template along with API for Unreal Engine 5.5.1 is provided at:
+
+1. [Echo Whisper Template on MEGA](https://mega.nz/folder/D5IEhaZT#PIEDeyTS19-9I8YHkDKAZA).
+2. [Echo Whisper Template on Google Drive](https://drive.google.com/drive/folders/17BPB46qktnRk57dsFvAVoWRIDE3gk-nv?usp=sharing)
+
 *Poor me cannot afford paid GitHub Storage yet*
 
 ### Adding your own Documents:
