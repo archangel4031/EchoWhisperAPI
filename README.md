@@ -11,6 +11,8 @@ Echo Whisper is an AI assistant that uses a locally hosted Large Language Model 
 
 ## Installation:
 
+[YouTube Video for Installation](https://www.youtube.com/watch?v=0sRt-dmOQAg)
+
 1. Clone the repository: 
 
 ```bash
@@ -141,11 +143,12 @@ You can add your own documents to the vector store by creating a **Markdown File
 
 ## Video Demo:
 
-A video demo is available here on [YouTube](https://www.youtube.com)
+A video demo is available here on [YouTube](https://www.youtube.com/watch?v=vcOuQMl09uQ)
 
 ## Todo:
 
 - [X] Replace Anaconda with `uv`
+- [ ] Use a *config* file for settings, instead of hardcoded values
 - [ ] Add Chat History
 - [ ] Add Conversation Memory per NPC
 - [ ] Support for more document formats (PDF, docx, etc.)
