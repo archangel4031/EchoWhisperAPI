@@ -13,28 +13,34 @@ from uuid import uuid4
 from langchain_core.documents import Document
 import shutil
 from modules.customLogger import setup_logger
+from modules.load_configs import get_config_value, get_config_object
 
 logger = setup_logger()
 
 # Document Folder Path
 FOLDERPATH = "docs"
+# FOLDERPATH = get_config_value(get_config_object(), "Vector Store", "FOLDERPATH", FOLDERPATH)
 
 # Embedding Model
 EMBEDDING_MODEL = "nomic-embed-text:latest"
+EMBEDDING_MODEL = str(get_config_value(get_config_object(), "Vector Store", "EMBEDDING_MODEL", EMBEDDING_MODEL))
 
 # Persist Directory
 PERSIST_DIRECTORY = "VectorStore/chroma_db"
 
 # Number of results (k)
 NUM_RESULTS = 1
+NUM_RESULTS = int(get_config_value(get_config_object(), "Vector Store", "NUM_RESULTS", NUM_RESULTS))
 
 # Diversity of Retriever
 MMR_DIVERSITY = 0.5
+MMR_DIVERSITY = float(get_config_value(get_config_object(), "Vector Store", "MMR_DIVERSITY", MMR_DIVERSITY))
 # lambda_mult: Diversity of results returned by MMR;
 # 1 for minimum diversity and 0 for maximum. (Default: 0.5)
 
 # Score Threshold
 SCORE_THRESHOLD = 1.0
+SCORE_THRESHOLD = float(get_config_value(get_config_object(), "Vector Store", "SCORE_THRESHOLD", SCORE_THRESHOLD))
 
 # Get Final Document Object
 documents = get_final_document(FOLDERPATH, True)

@@ -7,6 +7,7 @@ from typing import List
 from langchain_community.document_loaders import DirectoryLoader
 from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
 from modules.customLogger import setup_logger
+from modules.load_configs import get_config_value, get_config_object
 
 logger = setup_logger()
 
@@ -22,8 +23,11 @@ headers_to_split_on = [
 
 # Recursive Character Text Splitter Chunking
 CHUNK_SIZE = 1024
-CHUNK_OVERLAP = 512
+CHUNK_OVERLAP = 200
 SEPARATORS = ["\n\n", "\n", "(?<=\. )", " ", ""]
+CHUNK_SIZE = int(get_config_value(get_config_object(), "Doc Loader Splitter", "CHUNK_SIZE", CHUNK_SIZE))
+CHUNK_OVERLAP = int(get_config_value(get_config_object(), "Doc Loader Splitter", "CHUNK_OVERLAP", CHUNK_OVERLAP))
+
 
 # Define Recursive Character Text Splitter
 r_splitter = RecursiveCharacterTextSplitter(

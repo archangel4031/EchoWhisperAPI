@@ -8,13 +8,14 @@ parser.add_argument(
     "--log-level",
     type=str.upper,
     choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
-    default="INFO",
+    default="WARNING",
     help="Set the log level (default: INFO)",
 )
 args = parser.parse_args()
 
 # Create a logger with a specific name
 set_log_level(args.log_level)
+
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
@@ -23,6 +24,7 @@ from typing import Optional
 
 from modules.llm_query import query_llm_with_limited_memory
 from modules.vector_store_retriever import query_vector_store_with_score, clear_vector_store
+
 
 # Clear Vector Store (use this if settings have changed in vector_store_retriever.py OR doc_loader_splitter_md.py)
 # clear_vector_store()

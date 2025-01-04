@@ -148,7 +148,7 @@ A video demo is available here on [YouTube](https://www.youtube.com/watch?v=vcOu
 ## Todo:
 
 - [X] Replace Anaconda with `uv`
-- [ ] Use a *config* file for settings, instead of hardcoded values
+- [X] Use a *config* file for settings, instead of hardcoded values
 - [ ] Add Chat History
 - [ ] Add Conversation Memory per NPC
 - [ ] Support for more document formats (PDF, docx, etc.)

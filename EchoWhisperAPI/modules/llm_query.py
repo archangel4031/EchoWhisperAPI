@@ -4,18 +4,22 @@ import json
 from typing import Union, List
 import os
 from modules.customLogger import setup_logger
+from modules.load_configs import get_config_value, get_config_object
 
 logger = setup_logger()
 
 # selected_model="llama3.2:latest"
 selected_model = "llama3.2:1b-instruct-q4_K_S"
 # selected_model="qwen2:0.5b"
+selected_model = str(get_config_value(get_config_object(), "LLM Query", "selected_model", selected_model))
 
 # Default System Instruction
 DEFAULT_SYSTEM_INSTRUCTION = "You are a Character in a video game. Answer the question in a friendly tone as if you were a real person. Answer briefly and precisely. Format your answer as a continuous string. Reply to greetings properly. Do not make up an answer unless no document context is provided. If you do not know simply reply I dont know the answer to this."
+DEFAULT_SYSTEM_INSTRUCTION = str(get_config_value(get_config_object(), "LLM Query", "DEFAULT_SYSTEM_INSTRUCTION", DEFAULT_SYSTEM_INSTRUCTION))
 
 # Chat Messages History Limit
 MAX_MESSAGES = 10
+MAX_MESSAGES = int(get_config_value(get_config_object(), "LLM Query", "MAX_MESSAGES", MAX_MESSAGES))
 
 # Define the LLM configuration
 llm = ChatOllama(
